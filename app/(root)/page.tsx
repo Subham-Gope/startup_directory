@@ -1,3 +1,7 @@
 export default function Home() {
-  return <>HOME</>;
+  return (
+    <>
+      <h1 className=" text-2xl">HOME</h1>
+    </>
+  );
 }
