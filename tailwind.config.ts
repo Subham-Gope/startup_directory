@@ -1,3 +1,6 @@
+import typography from "@tailwindcss/typography";
+import animate from "tailwindcss-animate";
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -42,6 +45,6 @@ module.exports = {
       },
     },
   },
-  plugins: ["@tailwindcss/typography", "tailwindcss-animate"],
+  plugins: [typography, animate],
   darkMode: "class",
 };
