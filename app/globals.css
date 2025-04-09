@@ -1,4 +1,6 @@
 @import "tailwindcss" important;
+@plugin "@tailwindcss/typography";
+@plugin "tailwindcss-animate";
 
 @layer base {
   :root {
