@@ -1,3 +1,5 @@
+import SearchForm from "../components/SearchForm";
+
 export default function Home() {
   return (
     <>
@@ -6,10 +8,10 @@ export default function Home() {
           Pitch Your Startup, <br /> Connect with Entrpreneurs
         </h1>
         <p className="sub-heading !max-w-3xl">
-        Ideate. Vote. Win. Make your mark in virtual pitch battles.
+          Ideate. Vote. Win. Make your mark in virtual pitch battles.
         </p>
 
-        <
+        <SearchForm />
       </section>
     </>
   );
