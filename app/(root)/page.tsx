@@ -8,6 +8,8 @@ export default function Home() {
         <p className="sub-heading !max-w-3xl">
         Ideate. Vote. Win. Make your mark in virtual pitch battles.
         </p>
+
+        <
       </section>
     </>
   );
