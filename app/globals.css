@@ -13,7 +13,7 @@
 }
 @layer base {
   * {
-   
+    @apply border-r-black-100 outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
