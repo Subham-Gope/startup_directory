@@ -15,7 +15,13 @@ const SearchForm = () => {
           placeholder="Search Startups"
         />
 
-        <div className="flex gap-2">{query && <SearchFormReset />}</div>
+        <div className="flex gap-2">
+          {query && <SearchFormReset />}
+
+          <button type="submit" className="search-btn text-white">
+            s
+          </button>
+        </div>
       </Form>
     </>
   );
