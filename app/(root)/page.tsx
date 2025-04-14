@@ -1,6 +1,10 @@
 import SearchForm from "../components/SearchForm";
 
-export default function Home() {
+export default function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ query?: string }>;
+}) {
   return (
     <>
       <section className="pink_container">
