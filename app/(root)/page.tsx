@@ -7,6 +7,20 @@ export default async function Home({
 }) {
   const query = (await searchParams).query;
 
+  const posts = [
+    {
+      _createdAt: "Yesterday",
+      views: 55,
+      author: { _id: 1 },
+      _id: 1,
+      description: "This is a description",
+      image:
+        "https://images.pexels.com/photos/2085831/pexels-photo-2085831.jpeg",
+      category: "Robots",
+      title: "We Robots",
+    },
+  ];
+
   return (
     <>
       <section className="pink_container">
@@ -23,6 +37,14 @@ export default async function Home({
         <p className="text-30-semibold">
           {query ? `Search results for ${query}` : `All startups`}
         </p>
+
+        <ul className="mt-7 card_grid">
+          {posts?.length > 0 ? (
+            posts.map((StartupCardType, number) => <StartupCard />)
+          ) : (
+            <p className="no-results">No startups found</p>
+          )}
+        </ul>
       </section>
     </>
   );
