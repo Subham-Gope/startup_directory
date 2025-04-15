@@ -10,7 +10,7 @@ export default async function Home({
 
   const posts = [
     {
-      _createdAt: "Yesterday",
+      _createdAt: new Date(),
       views: 55,
       author: { _id: 1 },
       _id: 1,
