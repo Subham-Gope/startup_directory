@@ -26,8 +26,14 @@ export const author = defineType({
       type: "number",
     }),
     defineField({
-      name: "",
-      type: "",
+      name: "description",
+      type: "text",
+    }),
+    defineField({
+      name: "category",
+      type: "string",
+      validation: (Rule) =>
+        Rule.min(1).max(20).required().error("Please enter a category"),
     }),
   ],
 });
