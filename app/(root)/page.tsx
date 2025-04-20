@@ -12,8 +12,6 @@ export default async function Home({
 
   const posts = await client.fetch(STARTUP_QUERY);
 
-  console.log(JSON.stringify(posts, null, 2));
-
   // const posts = [
   //   {
   //     _createdAt: new Date(),
