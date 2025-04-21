@@ -8,8 +8,6 @@ import { Author, Startup } from "@/sanity/types";
 
 export type StartupTypeCard = Omit<Startup, "author"> & { author?: Author };
 
-
-
 const StartupCard = ({ post }: { post: StartupTypeCard }) => {
   const {
     _createdAt,
@@ -56,7 +54,7 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
       <Link href={`/startup/${_id}`}>
         <p className="startup-card_desc">{description}</p>
         <Image
-          src={image}
+          src={image || "https://placehold.co/500x300"}
           alt={title || "Startup image"}
           width={500}
           height={300}
