@@ -17,5 +17,5 @@ export const STARTUPS_QUERY =
     views, 
     description, 
     category, 
-    image
+    image, pitch
     }`);
