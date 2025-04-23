@@ -1,5 +1,7 @@
 import React from "react";
 
+export const experimental_
+
 const page = async ({ params }: { params: Promise<{ id: string }> }) => {
   const id = (await params).id;
 
