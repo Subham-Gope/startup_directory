@@ -16,7 +16,9 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
   return (
     <>
-      <section className="pink_container !min-h-[230px]"></section>
+      <section className="pink_container !min-h-[230px]">
+        <p></p>
+      </section>
       <h1 className="text-3xl">{post.title}</h1>
     </>
   );
