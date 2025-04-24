@@ -3,6 +3,8 @@ import { STARTUP_BY_ID_QUERY } from "@/sanity/lib/queries";
 import React from "react";
 import { notFound } from "next/navigation";
 import { formatDate } from "@/lib/utils";
+import Link from "next/link";
+import Image from "next/image";
 
 export const experimental_ppr = true;
 
@@ -23,7 +25,28 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
         <p className="sub-heading !max-w-5xl">{post.description}</p>
       </section>
       <section className="section_container">
-        <img src={post?.image} alt="thumbnail" className="w-full h-auto rounded-full"/>
+        <img
+          src={post?.image}
+          alt="thumbnail"
+          className="w-full h-auto rounded-full"
+        />
+
+        <div className="space-y-5 mt-10 max-w-4xl mx-auto">
+          <div className="flex-between gap-5">
+            <Link
+              href={`/user/${post.author?._id}`}
+              className="flex gap-2 items-center mb-3"
+            >
+              <Image
+                src={post?.author?.image}
+                alt="avatar"
+                width={64}
+                height={64}
+                className="rounded-full"
+              />
+            </Link>
+          </div>
+        </div>
       </section>
     </>
   );
