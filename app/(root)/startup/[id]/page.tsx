@@ -2,6 +2,7 @@ import { client } from "@/sanity/lib/client";
 import { STARTUP_BY_ID_QUERY } from "@/sanity/lib/queries";
 import React from "react";
 import { notFound } from "next/navigation";
+import { formatDate } from "@/lib/utils";
 
 export const experimental_ppr = true;
 
@@ -17,9 +18,9 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
   return (
     <>
       <section className="pink_container !min-h-[230px]">
-        <p className="tag"></p>
+        <p className="tag">{formatDate(post?._createdAt)}</p>
+        <h1 className="text-3xl">{post.title}</h1>
       </section>
-      <h1 className="text-3xl">{post.title}</h1>
     </>
   );
 };
