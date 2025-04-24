@@ -25,6 +25,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
         <p className="sub-heading !max-w-5xl">{post.description}</p>
       </section>
       <section className="section_container">
+       { // eslint-disable-next-line @next/next/no-img-element}
         <img
           src={post?.image}
           alt="thumbnail"
