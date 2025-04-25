@@ -2,6 +2,7 @@ import React from "react";
 import Ping from "./Ping";
 import { client } from "@/sanity/lib/client";
 import { STARTUP_VIEWS_QUERY } from "@/sanity/lib/queries";
+import { formatViews } from "@/lib/utils";
 
 const View = async ({ id }: { id: string }) => {
   const { views: totalViews } = await client
@@ -16,7 +17,7 @@ const View = async ({ id }: { id: string }) => {
         <Ping />
       </div>
       <p className="view-text">
-        <span className="font-black">{}</span>
+        <span className="font-black">{formatViews()}</span>
       </p>
     </div>
   );
