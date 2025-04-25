@@ -13,19 +13,7 @@ export default async function Home({
 
   const { data: posts } = await sanityFetch({ query: STARTUPS_QUERY, params });
 
-  // const posts = [
-  //   {
-  //     _createdAt: new Date(),
-  //     views: 55,
-  //     author: { _id: 1, name: "Subham Gope" },
-  //     _id: 1,
-  //     description: "This is a description",
-  //     image:
-  //       "https://images.pexels.com/photos/2085831/pexels-photo-2085831.jpeg",
-  //     category: "Robots",
-  //     title: "We Robots",
-  //   },
-  // ];
+ 
 
   return (
     <>
@@ -58,3 +46,5 @@ export default async function Home({
     </>
   );
 }
+
+// sanity updated
