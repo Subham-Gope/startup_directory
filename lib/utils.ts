@@ -14,9 +14,8 @@ export const formatDate = (date: string) => {
 };
 
 export const formatViews = (views: number): string => {
-  if (views <= 1) {
+  if (views == 1) {
     return `${views} View`;
-  } else  {
-    return `${views} Views`;
   }
+  return `${views} Views`;
 };
