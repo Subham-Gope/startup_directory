@@ -1,6 +1,6 @@
 import { client } from "@/sanity/lib/client";
 import { STARTUP_BY_ID_QUERY } from "@/sanity/lib/queries";
-import React from "react";
+import React, { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { formatDate } from "@/lib/utils";
 import Link from "next/link";
@@ -77,6 +77,12 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
           )}
         </div>
         <hr className="divider" />
+
+        {/*TODO:  EDITOR SELECTED STARTUP */}
+
+        <Suspense fallback={}>
+
+        </Suspense>
       </section>
     </>
   );
