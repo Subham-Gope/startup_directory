@@ -76,6 +76,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
             <p className="no-result">No details provided</p>
           )}
         </div>
+        <hr className="divider" />
       </section>
     </>
   );
