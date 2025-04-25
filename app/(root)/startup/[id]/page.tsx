@@ -64,7 +64,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
           <h3 className="text-30-bold">Pitch Details</h3>
           {rawContent ? (
-            <article dangerouslySetInnerHTML={{ __html: rawContent }} />
+            <article className="prose max-w-4xl font-work-sans break-all" dangerouslySetInnerHTML={{ __html: rawContent }} />
           ) : (
             <p className="no-result">No details provided</p>
           )}
