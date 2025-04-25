@@ -5,6 +5,9 @@ import { notFound } from "next/navigation";
 import { formatDate } from "@/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
+import markdownit from  "markdown-it";
+
+const md = markdownit();
 
 export const experimental_ppr = true;
 
@@ -16,6 +19,9 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
   if (!post) {
     return notFound();
   }
+  
+
+  
 
   return (
     <>
