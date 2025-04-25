@@ -6,6 +6,7 @@ import { formatDate } from "@/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
 import markdownit from "markdown-it";
+import DOMPurify from "isomorphic-dompurify";
 
 const md = markdownit();
 
@@ -22,6 +23,9 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
   // convert to markdown to HTML
   const rawContent = md.render(post?.pitch || "");
+
+  // sanitized Content for protection against XSS attacks
+  const sanitizedContent = DOMPurify.sanitize(rawContent);
 
   return (
     <>
@@ -63,8 +67,11 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
           </div>
 
           <h3 className="text-30-bold">Pitch Details</h3>
-          {rawContent ? (
-            <article className="prose max-w-4xl font-work-sans break-all" dangerouslySetInnerHTML={{ __html: rawContent }} />
+          {sanitizedContent ? (
+            <article
+              className="prose max-w-4xl font-work-sans break-all"
+              dangerouslySetInnerHTML={{ __html: sanitizedContent }}
+            />
           ) : (
             <p className="no-result">No details provided</p>
           )}
