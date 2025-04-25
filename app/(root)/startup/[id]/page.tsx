@@ -20,6 +20,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
     return notFound();
   }
 
+  // convert to markdown to HTML
   const rawContent = md.render(post?.pitch || "");
 
   return (
@@ -62,9 +63,9 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
           </div>
 
           <h3 className="text-30-bold">Pitch Details</h3>
-          {parsedContent ? (
-            <article dangerouslySetInnerHTML={{_html: parsedContent}}/>
-          ):(
+          {rawContent ? (
+            <article dangerouslySetInnerHTML={{ __html: rawContent }} />
+          ) : (
             <p className="no-result">No details provided</p>
           )}
         </div>
