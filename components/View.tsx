@@ -7,6 +7,9 @@ const View = ({ id }: { id: string }) => {
       <div className="absolute -top-2 -right-2">
         <Ping />
       </div>
+      <p className="view-text">
+        <span className="font-black">100 views</span>
+      </p>
     </div>
   );
 };
