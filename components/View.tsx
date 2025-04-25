@@ -4,11 +4,11 @@ import { client } from "@/sanity/lib/client";
 import { STARTUP_VIEWS_QUERY } from "@/sanity/lib/queries";
 
 const View = async ({ id }: { id: string }) => {
-
-
-const {views: totalViews }= await client.withConfig({
-    useCdn:false
-}).fetch(STARTUP_VIEWS_QUERY, {})
+  const { views: totalViews } = await client
+    .withConfig({
+      useCdn: false,
+    })
+    .fetch(STARTUP_VIEWS_QUERY, { id });
 
   return (
     <div className="view-container">
@@ -16,7 +16,7 @@ const {views: totalViews }= await client.withConfig({
         <Ping />
       </div>
       <p className="view-text">
-        <span className="font-black">100 views</span>
+        <span className="font-black">{}</span>
       </p>
     </div>
   );
