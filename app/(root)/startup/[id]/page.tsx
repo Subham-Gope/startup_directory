@@ -7,6 +7,8 @@ import Link from "next/link";
 import Image from "next/image";
 import markdownit from "markdown-it";
 import DOMPurify from "isomorphic-dompurify";
+import { Skeleton } from "@/components/ui/skeleton";
+
 
 const md = markdownit();
 
@@ -80,9 +82,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
         {/*TODO:  EDITOR SELECTED STARTUP */}
 
-        <Suspense fallback={}>
-
-        </Suspense>
+        <Suspense fallback={<Skeleton className="view_skeleton" />}></Suspense>
       </section>
     </>
   );
