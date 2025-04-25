@@ -11,7 +11,7 @@ const View = async ({ id }: { id: string }) => {
     })
     .fetch(STARTUP_VIEWS_QUERY, { id });
 
-    // TODO: Up
+  // TODO: Update the number of views
 
   return (
     <div className="view-container">
