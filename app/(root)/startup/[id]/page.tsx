@@ -20,7 +20,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
     return notFound();
   }
 
-  const parsedContent = md.render(post?.pitch || "");
+  const rawContent = md.render(post?.pitch || "");
 
   return (
     <>
@@ -65,7 +65,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
           {parsedContent ? (
             <article dangerouslySetInnerHTML={{_html: parsedContent}}/>
           ):(
-            <p className="no-result">No</p>
+            <p className="no-result">No details provided</p>
           )}
         </div>
       </section>
