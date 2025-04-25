@@ -11,6 +11,8 @@ const View = async ({ id }: { id: string }) => {
     })
     .fetch(STARTUP_VIEWS_QUERY, { id });
 
+    // TODO: Up
+
   return (
     <div className="view-container">
       <div className="absolute -top-2 -right-2">
