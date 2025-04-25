@@ -1,6 +1,6 @@
 import React from 'react'
 
-const View = () => {
+const View = ({id}: {id:string}) => {
   return (
     <div>View</div>
   )
