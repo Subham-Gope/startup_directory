@@ -32,9 +32,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           id: profile?.id,
         });
 
-       
-          token.id = user?._id;
-        
+        token.id = user?._id;
       }
       return token;
     },
