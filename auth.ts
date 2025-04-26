@@ -32,13 +32,13 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           id: profile?.id,
         });
 
-        if (!user) {
-          token.id = user._id;
-        }
+       
+          token.id = user?._id;
+        
       }
       return token;
     },
-    async session({ session, user, token }) {
+    async session({ session, token }) {
       Object.assign(session, { id: token.id });
       return session;
     },
