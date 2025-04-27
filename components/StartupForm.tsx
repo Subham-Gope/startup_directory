@@ -6,10 +6,13 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import rehypeSanitize from "rehype-sanitize";
 import { Button } from "./ui/button";
+import { Send } from "lucide-react";
 
 const StartupForm = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [pitch, setPitch] = useState("**Hello world!!!**");
+  const [pitch, setPitch] = useState("");
+
+  const isPending = false;
 
   return (
     <form action={() => {}} className="startup-form">
@@ -117,7 +120,14 @@ const StartupForm = () => {
 
       {/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */}
 
-      <Button />
+      <Button
+        type="submit"
+        className="startup-form_btn text-white"
+        disabled={isPending}
+      >
+        {isPending ? "Submitting" : "Submit your Pitch"}
+        <Send className="size-6 ml-2" />
+      </Button>
     </form>
   );
 };
