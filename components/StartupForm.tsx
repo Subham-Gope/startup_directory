@@ -1,5 +1,7 @@
+"use client";
+
 const StartupForm = () => {
-  return <div>StartupForm</div>;
+  return <form action={() => {}} className="startup-form"></form>;
 };
 
 export default StartupForm;
