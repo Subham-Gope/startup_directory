@@ -4,6 +4,7 @@ import { useState } from "react";
 import MDEditor from "@uiw/react-md-editor";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
+import rehypeSanitize from "rehype-sanitize";
 
 const StartupForm = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -84,11 +85,27 @@ const StartupForm = () => {
 
       {/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */}
 
-      <div>
+      <div data-color-mode="lights">
         <label htmlFor="pitch" className="startup-form_label">
           Pitch
         </label>
-        <MDEditor value={pitch} onChange={(value) => setPitch(value as string)} />
+        <MDEditor
+          value={pitch}
+          onChange={(value) => setPitch(value as string)}
+          id="pitch"
+          preview="edit"
+          height={300}
+          style={{ borderRadius: 20, overflow: "hidden" }}
+          textareaProps={{
+            placeholder: "Please enter Markdown text",
+            maxLength: 2000,
+          }}
+          previewOptions={{
+            rehypePlugins: [[rehypeSanitize]],
+            disallowedElements: ["style"],
+          }}
+          visibleDragbar={true}
+        />
         {errors.pitch && <p className="startup-form_error">{errors.pitch}</p>}
       </div>
 
