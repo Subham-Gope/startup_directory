@@ -54,7 +54,7 @@ const StartupForm = () => {
           required
           placeholder="Startup Category"
         />
-        <datalist id="categoryList">
+        <datalist id="categoryList" className="w-[60%]">
           <option value="Health Tech" />
           <option value="Fin Tech" />
           <option value="Ed Tech" />
@@ -68,17 +68,17 @@ const StartupForm = () => {
       {/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */}
 
       <div>
-        <label htmlFor="title" className="startup-form_label">
-          Title
+        <label htmlFor="link" className="startup-form_label">
+          Image URL
         </label>
         <Input
-          id="title"
-          name="title"
+          id="link"
+          name="link"
           className="startup-form_input"
           required
           placeholder="Startup Title"
         />
-        {errors.title && <p className="startup-form_error">{errors.title}</p>}
+        {errors.link && <p className="startup-form_error">{errors.link}</p>}
       </div>
 
       {/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */}
