@@ -5,6 +5,7 @@ import MDEditor from "@uiw/react-md-editor";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import rehypeSanitize from "rehype-sanitize";
+import { Button } from "./ui/button";
 
 const StartupForm = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -115,6 +116,8 @@ const StartupForm = () => {
       </div>
 
       {/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */}
+
+      <Button />
     </form>
   );
 };
