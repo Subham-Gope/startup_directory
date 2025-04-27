@@ -95,7 +95,12 @@ const StartupForm = () => {
           id="pitch"
           preview="edit"
           height={300}
-          style={{ borderRadius: 20, overflow: "hidden" }}
+          style={{
+            borderRadius: 20,
+            overflow: "hidden",
+            borderWidth: 3,
+            padding: "4px",
+          }}
           textareaProps={{
             placeholder: "Please enter Markdown text",
             maxLength: 2000,
