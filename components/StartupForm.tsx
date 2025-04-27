@@ -1,8 +1,12 @@
 "use client";
 
+import { useState } from "react";
+
 import { Input } from "./ui/input";
 
 const StartupForm = () => {
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
   return (
     <form action={() => {}} className="startup-form">
       <div>
@@ -16,6 +20,7 @@ const StartupForm = () => {
           required
           placeholder="Startup Title"
         />
+        {errors.title && <p className="startup-form_error">{errors.title}</p>}
       </div>
     </form>
   );
