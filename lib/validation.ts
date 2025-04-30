@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const formSchema = z.object({
+export const formSchema = z.object({
   title: z
     .string()
     .min(3, { message: "Must be 3 character long" })
@@ -25,4 +25,8 @@ const formSchema = z.object({
         return false;
       }
     }),
+
+  pitch: z
+    .string()
+    .min(100, { message: "Enter a pitch with atleast 100 characters" }),
 });
