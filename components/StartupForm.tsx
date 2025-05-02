@@ -35,13 +35,11 @@ const StartupForm = () => {
 
       await formSchema.parseAsync(formValues);
 
-
       const result = await createPitch(prevState, formData, pitch);
-
 
       if (result.status == "SUCCESS") {
         toast.success("Your startup pitch has been created successfully");
-        router.push(`/startup/${result.id}`);
+        router.push(`/startup/${result._id}`);
       }
       return result;
     } catch (error) {
