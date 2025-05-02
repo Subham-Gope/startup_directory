@@ -15,6 +15,11 @@ export const createPitch = async (
     );
   }
 
-const {title, description, category, link} = Object.fromEntries(Array.from(form).filter(([key])=>key!== 'pitch'))
+  const { title, description, category, link } = Object.fromEntries(
+    Array.from(form).filter(([key]) => key !== "pitch")
+  );
 
+  const slug = slugify(title as string, { lower: true, strict: true });
+
+  
 };
