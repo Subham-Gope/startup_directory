@@ -5,6 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
+// Format Date Function
 export const formatDate = (date: string) => {
   return new Date(date).toLocaleDateString("en-US", {
     month: "long",
@@ -13,6 +14,7 @@ export const formatDate = (date: string) => {
   });
 };
 
+// Format Utility Function
 export const formatViews = (views: number): string => {
   if (views == 1) {
     return `${views} View`;
@@ -27,4 +29,10 @@ export const formatViews = (views: number): string => {
     return `${Math.floor(views / 1000000)}M Views`;
   }
   return `${Math.floor(views / 1000000000)}B Views`;
+};
+
+// Format serverActionResponse
+
+export const parseServerActionResponse = <T>(response: T) => {
+  return JSON.parse(JSON.stringify(response));
 };
