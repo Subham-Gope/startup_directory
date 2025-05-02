@@ -1,12 +1,12 @@
-import React from 'react'
+import { auth } from "@/auth";
+import React from "react";
 
-const page = ({params} : {params:Promise<{id:string}> }) => {
+const page = async ({ params }: { params: Promise<{ id: string }> }) => {
+  const id = (await params).id;
 
-const id = 
+  const session = await auth();
 
-  return (
-    <div>page</div>
-  )
-}
+  return <div>page</div>;
+};
 
-export default page
+export default page;
