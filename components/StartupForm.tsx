@@ -22,6 +22,8 @@ const StartupForm = () => {
     formData: FormData
   ) => {
     try {
+     
+
       const formValues = {
         title: formData.get("title") as string,
         description: formData.get("description") as string,
@@ -30,21 +32,23 @@ const StartupForm = () => {
         pitch,
       };
 
+      console.log(formValues);
+
+
       setPitch("");
 
       await formSchema.parseAsync(formValues);
 
-      console.log(formValues)
-
+   
       // const result = await createIdea(prevState, formData, pitch);
 
       // console.log(result)
 
       // if (result.status == "SUCCESS") {
       //   toast.success("Your startup pitch has been created successfully");
-     // router.push(`/startup/${result.id}`)
+      // router.push(`/startup/${result.id}`)
       // }
-     // return result
+      // return result
     } catch (error) {
       if (error instanceof z.ZodError) {
         const fieldErrors = error.flatten().fieldErrors;
