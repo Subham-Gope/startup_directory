@@ -1,6 +1,9 @@
 import React from 'react'
 
-const page = () => {
+const page = ({params} : {params:Promise<{id:string}> }) => {
+
+const id = 
+
   return (
     <div>page</div>
   )
