@@ -22,8 +22,6 @@ const StartupForm = () => {
     formData: FormData
   ) => {
     try {
-     
-
       const formValues = {
         title: formData.get("title") as string,
         description: formData.get("description") as string,
@@ -32,14 +30,12 @@ const StartupForm = () => {
         pitch,
       };
 
-      console.log(formValues);
-
-
       setPitch("");
 
       await formSchema.parseAsync(formValues);
 
-   
+      console.log(formValues);
+
       // const result = await createIdea(prevState, formData, pitch);
 
       // console.log(result)
