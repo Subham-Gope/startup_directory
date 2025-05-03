@@ -36,7 +36,15 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
           <p className="text-30-extrabold mt-7 text-center">
             {user?.username ? `@${user?.username}` : ``}
           </p>
-          <p className="mt-1 text-center text-14-normal w-[60%] text-semibold">{user?.bio}</p>
+          <p className="mt-1 text-center text-white-100 w-[60%] !text-lg !font-bold">
+            {user?.bio}
+          </p>
+        </div>
+
+        <div className="flex-1 flex flex-col gap-5 lg:mt-5">
+          <p className="text-30-bold">
+            {session?.id == id ? "Your" : "All"} Startups
+          </p>
         </div>
       </section>
     </>
