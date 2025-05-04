@@ -1,4 +1,5 @@
 import { auth } from "@/auth";
+import UserStartups from "@/components/UserStartups";
 import { client } from "@/sanity/lib/client";
 import { AUTHOR_BY_ID_QUERY } from "@/sanity/lib/queries";
 import Image from "next/image";
@@ -45,7 +46,9 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
           <p className="text-30-bold">
             {session?.id == id ? "Your" : "All"} Startups
           </p>
-          <ul className="card_grid-sm">{/* TODO: ADD USER_STARTUPS  */}</ul>
+          <ul className="card_grid-sm">
+            <UserStartups />
+          </ul>
         </div>
       </section>
     </>
