@@ -16,10 +16,13 @@ export const formatDate = (date: string) => {
 
 // Format Utility Function
 export const formatViews = (views: number): string => {
+  if (!views) {
+    return `0 views`;
+  }
   if (views == 1) {
     return `${views} View`;
   }
-  if (views == 0 || (views >= 1 && views < 1000)) {
+  if (views >= 1 && views < 1000) {
     return `${views} Views`;
   }
   if (views >= 1000 && views < 1000000) {
