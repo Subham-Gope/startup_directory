@@ -18,6 +18,8 @@ const StartupForm = () => {
   const [pitch, setPitch] = useState("");
   const router = useRouter();
 
+  
+
   const handleFormSubmit = async (
     prevState: FormData | undefined,
     formData: FormData
